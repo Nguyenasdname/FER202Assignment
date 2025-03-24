@@ -1,11 +1,57 @@
-import { useContext } from "react"
-import { Container, Table, Button, Card } from "react-bootstrap"
+import { useState, useContext } from "react"
+import { Modal, Form, Container, Table, Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import { CartContext } from "../context/CartContext"
+import Confetti from "react-confetti"
+import { useWindowSize } from "react-use"
 
 function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useContext(CartContext)
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", address: "" });
+  const [orderSuccess, setOrderSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
+  const { width, height } = useWindowSize();
+
+  const validateForm = () => {
+    let newErrors = {};
+  
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required!";
+    }
+  
+    const phoneRegex = /^[0-9]{10,15}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Invalid phone number! Must be 10-15 digits.";
+    }
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Invalid email format!";
+    }
+  
+    if (formData.address.trim().length < 5) {
+      newErrors.address = "Address must be at least 5 characters long!";
+    }
+  
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  
+  const handleCheckout = () => {
+    if (!validateForm()) {
+      return;
+    }
+  
+    setOrderSuccess(true);
+    setTimeout(() => {
+      setShowModal(false);
+      clearCart();
+      setOrderSuccess(false);
+    }, 3000);
+  };
+
 
   const totalPrice = cart.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -17,10 +63,10 @@ function CartPage() {
         <Navbar />
         <Container className="py-5 text-center">
           <h1 className="mb-4">Your Cart</h1>
-          <p>Your cart is empty</p>
+          <p>Life is Music but Your cart is empty!</p>
           <Link to="/">
             <Button variant="primary" className="mt-3">
-              Continue Shopping
+            Go Back And Buy Life
             </Button>
           </Link>
         </Container>
@@ -109,7 +155,7 @@ function CartPage() {
               </tbody>
             </Table>
             <div className="d-flex justify-content-between mt-3">
-              <Link to="/home">
+              <Link to="/">
                 <Button variant="outline-primary">Continue Shopping</Button>
               </Link>
               <Button variant="outline-danger" onClick={clearCart}>
@@ -137,14 +183,79 @@ function CartPage() {
                   <span>Total:</span>
                   <span>${totalPrice.toFixed(2)}</span>
                 </div>
-                <Button variant="success" className="w-100 mt-3">
+                <Button variant="success" className="w-100 mt-3" onClick={() => setShowModal(true)}>
                   Proceed to Checkout
                 </Button>
-              </Card.Body>
-            </Card>
+                </Card.Body>
+                </Card>
           </div>
-        </div>
-      </Container>
+          
+          <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>Delivery information</Modal.Title>
+            </Modal.Header>
+            
+            <Modal.Body>
+            {orderSuccess ? (
+              <>
+              <Confetti width={width} height={height} style={{ width: Math.min(500, width / 2), height: Math.min(500, height / 2) }} />
+              <div className="text-center">
+                <h5>Thank you for your purchase!</h5>
+                <p>Your order is being processed.</p>
+                </div>
+              </>
+              ) : (
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Label>Name</Form.Label>
+                    <Form.Control
+                    type="text"
+                    placeholder="Your Name"
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    isInvalid={!!errors.name}/>
+                   <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
+                </Form.Group>
+                
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                    type="text"
+                    placeholder="Your Phone Number"
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    isInvalid={!!errors.phone}/>
+                    <Form.Control.Feedback type="invalid">{errors.phone}
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                  
+                <Form.Group className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                    <Form.Control
+                    type="email"
+                    placeholder="Your Email"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    isInvalid={!!errors.email}/>
+                    <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
+                  </Form.Group>
+                
+                <Form.Group className="mb-3">
+                  <Form.Label>Address</Form.Label>
+                    <Form.Control
+                    type="text"
+                    placeholder="Your Address"
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    isInvalid={!!errors.address}/>
+                    <Form.Control.Feedback type="invalid">{errors.address}</Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Button variant="success" className="w-100" onClick={handleCheckout}>
+                    Order confirmation
+                  </Button>
+                </Form>
+              )}
+              </Modal.Body>
+            </Modal>
+          </div>
+       </Container>
     </>
   )
 }
