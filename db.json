@@ -594,11 +594,16 @@
       "id": 3
     },
     {
-      "id": 4,
-      "username": "MaiNinhGa",
+      "username": "de181082nguyenvietnguyen",
+      "email": "de181082nguyenvietnguyen@gmail.com",
       "password": "123",
-      "email": "tlework001@gmail.com",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtBpcx-0pczS4UbRfA1duQd607M-nXOG-aA&s"
+      "id": 4
+    },
+    {
+      "username": "fressfarmse18c02",
+      "email": "fressfarmse18c02@gmail.com",
+      "password": "123",
+      "id": 5
     }
   ]
 }
