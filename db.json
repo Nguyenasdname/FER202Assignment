@@ -592,6 +592,18 @@
       "password": "123",
       "email": "nguyenkuhaku@gmail.com",
       "id": 3
+    },
+    {
+      "username": "de181082nguyenvietnguyen",
+      "email": "de181082nguyenvietnguyen@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "fressfarmse18c02",
+      "email": "fressfarmse18c02@gmail.com",
+      "password": "123",
+      "id": 5
     }
   ]
 }
