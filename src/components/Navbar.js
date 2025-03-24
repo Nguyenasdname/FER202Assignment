@@ -128,8 +128,10 @@ function Navbar() {
             {/* Avatar Dropdown for Profile and Logout */}
             {user && (
               <Nav.Link>
-                <NavDropdown title={<img src={user.avatar || 'https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg'} alt="avatar" className="avatar" style={{width: "50px", height: "50px", borderRadius: "50%"}} />} id="user-dropdown">
+                <NavDropdown title={<img src={user.avatar || 'https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg'} alt="avatar" className="avatar" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />} id="user-dropdown">
+                  <h5 className="mx-2">{user.username}</h5>
                   <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/orderHistory">Order History</NavDropdown.Item>
                   <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
                 </NavDropdown>
               </Nav.Link>

@@ -88,7 +88,7 @@ function ProductPage() {
             </div>
 
             <div className="mb-4">
-              <h5>Description:</h5>
+              {/* <h5>Description:</h5> */}
               <p>{product.description}</p>
             </div>
 

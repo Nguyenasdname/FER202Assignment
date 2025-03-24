@@ -578,7 +578,11 @@
       "username": "user1",
       "password": "123",
       "email": "nguyennv2107@gmail.com",
-      "avatar": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg"
+      "avatar": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg",
+      "firstname": "Nguyen ",
+      "lastname": "Nguyen Viet",
+      "phone": "0903210704",
+      "address": "376 Le Van Hien"
     },
     {
       "id": 2,
@@ -604,6 +608,39 @@
       "email": "fressfarmse18c02@gmail.com",
       "password": "123",
       "id": 5
+    }
+  ],
+  "orders": [
+    {
+      "orderId": 1742845199362,
+      "userId": 1,
+      "userDetails": {
+        "name": "Nguyen Nguyen Viet",
+        "phone": "0903210704",
+        "email": "nguyennv2107@gmail.com",
+        "address": "376 Le Van Hien"
+      },
+      "products": [
+        {
+          "name": "Roland TD-17KVX Electronic Drum Kit",
+          "quantity": 1,
+          "totalPrice": 1699.99
+        },
+        {
+          "name": "Yamaha P-125 Digital Piano",
+          "quantity": 1,
+          "totalPrice": 649.99
+        },
+        {
+          "name": "D'Addario EXL110 Electric Guitar Strings",
+          "quantity": 2,
+          "totalPrice": 25.98
+        }
+      ],
+      "total": 2375.96,
+      "date": "2025-03-24T19:39:59.362Z",
+      "shipaddress": "376 Le Van Hien",
+      "id": 1
     }
   ]
 }

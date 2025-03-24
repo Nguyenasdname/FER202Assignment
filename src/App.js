@@ -12,6 +12,8 @@ import CartPage from "./pages/CartPage"
 import SearchPage from "./pages/SearchPage"
 import LoginPage from "./auth/LoginPage"
 import Register from "./auth/RegisterPage"
+import ProfilePage from "./pages/ProfilePage"
+import OrderHistoryPage from "./pages/OrderHistoryPage"
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <CartProvider>
           <Routes>
             <Route path="/" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/orderHistory" element={<OrderHistoryPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/product/:id" element={<ProductPage />} />

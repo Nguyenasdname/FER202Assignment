@@ -1,10 +1,11 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { Modal, Form, Container, Table, Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import { CartContext } from "../context/CartContext"
 import Confetti from "react-confetti"
 import { useWindowSize } from "react-use"
+import axios from "axios"
 
 function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useContext(CartContext)
@@ -13,45 +14,95 @@ function CartPage() {
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [errors, setErrors] = useState({});
   const { width, height } = useWindowSize();
+  const [user, setUser] = useState(null);
 
   const validateForm = () => {
     let newErrors = {};
-  
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required!";
     }
-  
+
     const phoneRegex = /^[0-9]{10,15}$/;
     if (!phoneRegex.test(formData.phone)) {
       newErrors.phone = "Invalid phone number! Must be 10-15 digits.";
     }
-  
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.email = "Invalid email format!";
     }
-  
+
     if (formData.address.trim().length < 5) {
       newErrors.address = "Address must be at least 5 characters long!";
     }
-  
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
-  const handleCheckout = () => {
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      setUser(storedUser);
+
+      setFormData({
+        name: storedUser.firstname + storedUser.lastname || "",
+        phone: storedUser.phone || "",
+        email: storedUser.email || "",
+        address: storedUser.address || "",
+      });
+    }
+  }, []);
+
+  // const handleCheckout = () => {
+  //   if (!validateForm()) {
+  //     return;
+  //   }
+
+  //   setOrderSuccess(true);
+  //   setTimeout(() => {
+  //     setShowModal(false);
+  //     clearCart();
+  //     setOrderSuccess(false);
+  //   }, 5000);
+  // };
+
+  const handleCheckout = async () => {
     if (!validateForm()) {
       return;
     }
-  
-    setOrderSuccess(true);
-    setTimeout(() => {
-      setShowModal(false);
-      clearCart();
-      setOrderSuccess(false);
-    }, 3000);
-  };
 
+    // Prepare order data
+    const orderData = {
+      orderId: Date.now(),
+      userId: user?.id,
+      userDetails: formData,
+      products: cart.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        totalPrice: item.price * item.quantity
+      })),
+      total: totalPrice,
+      date: new Date().toISOString(),
+      shipaddress: formData.address
+    };
+
+    try {
+      // Send order to db.json via POST request
+      await axios.post('http://localhost:5000/orders', orderData);
+      
+      setOrderSuccess(true);
+      setTimeout(() => {
+        setShowModal(false);
+        clearCart();
+        setOrderSuccess(false);
+      }, 5000);
+    } catch (error) {
+      console.error('Lỗi khi lưu đơn hàng:', error);
+      alert('Có lỗi xảy ra khi xử lý đơn hàng của bạn. Vui lòng thử lại.');
+    }
+  };
 
   const totalPrice = cart.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -64,9 +115,9 @@ function CartPage() {
         <Container className="py-5 text-center">
           <h1 className="mb-4">Your Cart</h1>
           <p>Life is Music but Your cart is empty!</p>
-          <Link to="/">
+          <Link to="/home">
             <Button variant="primary" className="mt-3">
-            Go Back And Buy Life
+              Go Back And Buy Life
             </Button>
           </Link>
         </Container>
@@ -155,7 +206,7 @@ function CartPage() {
               </tbody>
             </Table>
             <div className="d-flex justify-content-between mt-3">
-              <Link to="/">
+              <Link to="/home">
                 <Button variant="outline-primary">Continue Shopping</Button>
               </Link>
               <Button variant="outline-danger" onClick={clearCart}>
@@ -186,64 +237,68 @@ function CartPage() {
                 <Button variant="success" className="w-100 mt-3" onClick={() => setShowModal(true)}>
                   Proceed to Checkout
                 </Button>
-                </Card.Body>
-                </Card>
+              </Card.Body>
+            </Card>
           </div>
-          
+
           <Modal show={showModal} onHide={() => setShowModal(false)} centered>
             <Modal.Header closeButton>
               <Modal.Title>Delivery information</Modal.Title>
             </Modal.Header>
-            
+
             <Modal.Body>
-            {orderSuccess ? (
-              <>
-              <Confetti width={width} height={height} style={{ width: Math.min(500, width / 2), height: Math.min(500, height / 2) }} />
-              <div className="text-center">
-                <h5>Thank you for your purchase!</h5>
-                <p>Your order is being processed.</p>
-                </div>
-              </>
+              {orderSuccess ? (
+                <>
+                  <Confetti width={width} height={height} style={{ width: Math.min(500, width / 2), height: Math.min(500, height / 2) }} />
+                  <div className="text-center">
+                    <h5>Thank you for your purchase!</h5>
+                    <p>Your order is being processed.</p>
+                  </div>
+                </>
               ) : (
-              <Form>
-                <Form.Group className="mb-3">
-                  <Form.Label>Name</Form.Label>
+                <Form>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
-                    type="text"
-                    placeholder="Your Name"
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    isInvalid={!!errors.name}/>
-                   <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
-                </Form.Group>
-                
-                <Form.Group className="mb-3">
-                  <Form.Label>Phone Number</Form.Label>
+                      type="text"
+                      value={formData.name}
+                      placeholder="Your Name"
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      isInvalid={!!errors.name} />
+                    <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Form.Group className="mb-3">
+                    <Form.Label>Phone Number</Form.Label>
                     <Form.Control
-                    type="text"
-                    placeholder="Your Phone Number"
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    isInvalid={!!errors.phone}/>
+                      type="text"
+                      value={formData.phone}
+                      placeholder="Your Phone Number"
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      isInvalid={!!errors.phone} />
                     <Form.Control.Feedback type="invalid">{errors.phone}
                     </Form.Control.Feedback>
                   </Form.Group>
-                  
-                <Form.Group className="mb-3">
-                  <Form.Label>Email</Form.Label>
+
+                  <Form.Group className="mb-3">
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
-                    type="email"
-                    placeholder="Your Email"
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    isInvalid={!!errors.email}/>
+                      type="email"
+                      value={formData.email}
+                      placeholder="Your Email"
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      isInvalid={!!errors.email} />
                     <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
                   </Form.Group>
-                
-                <Form.Group className="mb-3">
-                  <Form.Label>Address</Form.Label>
+
+                  <Form.Group className="mb-3">
+                    <Form.Label>Address</Form.Label>
                     <Form.Control
-                    type="text"
-                    placeholder="Your Address"
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    isInvalid={!!errors.address}/>
+                      type="text"
+                      value={formData.address}
+                      placeholder="Your Address"
+                      onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                      isInvalid={!!errors.address} />
                     <Form.Control.Feedback type="invalid">{errors.address}</Form.Control.Feedback>
                   </Form.Group>
 
@@ -252,10 +307,10 @@ function CartPage() {
                   </Button>
                 </Form>
               )}
-              </Modal.Body>
-            </Modal>
-          </div>
-       </Container>
+            </Modal.Body>
+          </Modal>
+        </div>
+      </Container>
     </>
   )
 }
