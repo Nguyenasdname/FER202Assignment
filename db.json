@@ -592,6 +592,13 @@
       "password": "123",
       "email": "nguyenkuhaku@gmail.com",
       "id": 3
+    },
+    {
+      "id": 4,
+      "username": "MaiNinhGa",
+      "password": "123",
+      "email": "tlework001@gmail.com",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtBpcx-0pczS4UbRfA1duQd607M-nXOG-aA&s"
     }
   ]
 }
