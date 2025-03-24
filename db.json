@@ -1,0 +1,597 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Yamaha F310 Acoustic Guitar",
+      "price": 199.99,
+      "description": "The Yamaha F310 is a full-size steel-string acoustic guitar that offers great playability and tone at an affordable price. Perfect for beginners and intermediate players.",
+      "category": "Guitar",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha-F310.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Fender Stratocaster Electric Guitar",
+      "price": 699.99,
+      "description": "The Fender Stratocaster is one of the most iconic electric guitars ever created. Known for its versatile tone and comfortable playability, it's a favorite among guitarists of all genres.",
+      "category": "Guitar",
+      "brand": "Fender",
+      "image": "/images/Fender Stratocaster Electric Guitar.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Roland FP-30X Digital Piano",
+      "price": 749.99,
+      "description": "The Roland FP-30X is a compact digital piano with authentic piano touch and tone. Features 88 weighted keys, built-in speakers, and Bluetooth connectivity.",
+      "category": "Keyboard",
+      "brand": "Roland",
+      "image": "/images/Roland FP-30X Digital Piano.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Yamaha PSR-E373 Portable Keyboard",
+      "price": 249.99,
+      "description": "The Yamaha PSR-E373 is a 61-key portable keyboard with touch-sensitive keys, 622 voices, and built-in lessons. Perfect for beginners and intermediate players.",
+      "category": "Keyboard",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha PSR-E373 Portable Keyboard.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Yamaha Stage Custom Drum Set",
+      "price": 899.99,
+      "description": "The Yamaha Stage Custom is a professional-grade drum set that offers exceptional sound quality and durability. Includes bass drum, toms, and snare drum.",
+      "category": "Drum",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha Stage Custom Drum Set.jpg",
+      "isBestSeller": true,
+      "inStock": false
+    },
+    {
+      "id": 6,
+      "name": "Fernandes Retrorocket X Electric Guitar",
+      "price": 599.99,
+      "description": "The Fernandes Retrorocket X is a vintage-inspired electric guitar with modern features. Features a comfortable body shape, powerful pickups, and smooth playability.",
+      "category": "Guitar",
+      "brand": "Fernandes",
+      "image": "/images/Fernandes Retrorocket X Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "name": "Fender Jazz Bass",
+      "price": 1299.99,
+      "description": "The Fender Jazz Bass is one of the most versatile and popular bass guitars ever created. Known for its distinctive tone and comfortable playability.",
+      "category": "Guitar",
+      "brand": "Fender",
+      "image": "/images/Fender Jazz Bass.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "name": "Roland TD-17KVX Electronic Drum Kit",
+      "price": 1699.99,
+      "description": "The Roland TD-17KVX is a premium electronic drum kit that offers realistic feel and sound. Features mesh heads, natural playing response, and built-in coaching functions.",
+      "category": "Drum",
+      "brand": "Roland",
+      "image": "/images/Roland TD-17KVX Electronic Drum Kit.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 9,
+      "name": "Gibson Les Paul Standard Electric Guitar",
+      "price": 2499.99,
+      "description": "The Gibson Les Paul Standard is a legendary electric guitar known for its rich, warm tone and sustain. Features a mahogany body with a maple top, rosewood fingerboard, and Burstbucker pickups.",
+      "category": "Guitar",
+      "brand": "Gibson",
+      "image": "/images/Gibson Les Paul Standard Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "name": "Ibanez RG550 Electric Guitar",
+      "price": 999.99,
+      "description": "The Ibanez RG550 is a high-performance electric guitar designed for speed and precision. Features a Super Wizard neck, Edge tremolo, and V7/V8 pickups.",
+      "category": "Guitar",
+      "brand": "Ibanez",
+      "image": "/images/Ibanez RG550 Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 11,
+      "name": "Martin D-28 Acoustic Guitar",
+      "price": 2899.99,
+      "description": "The Martin D-28 is a classic dreadnought acoustic guitar with a rich history. Features a solid Sitka spruce top, East Indian rosewood back and sides, and a mahogany neck.",
+      "category": "Guitar",
+      "brand": "Martin",
+      "image": "/images/Martin D-28 Acoustic Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 12,
+      "name": "Taylor 214ce Acoustic-Electric Guitar",
+      "price": 999.99,
+      "description": "The Taylor 214ce is a versatile acoustic-electric guitar with a Grand Auditorium body. Features a solid Sitka spruce top, layered rosewood back and sides, and ES2 electronics.",
+      "category": "Guitar",
+      "brand": "Taylor",
+      "image": "/images/Taylor 214ce Acoustic-Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 13,
+      "name": "PRS SE Custom 24 Electric Guitar",
+      "price": 829.99,
+      "description": "The PRS SE Custom 24 is a versatile electric guitar that delivers premium features at an affordable price. Features a maple top with mahogany back, 24-fret neck, and 85/15 'S' pickups.",
+      "category": "Guitar",
+      "brand": "PRS",
+      "image": "/images/PRS SE Custom 24 Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 14,
+      "name": "Epiphone Les Paul Standard Electric Guitar",
+      "price": 599.99,
+      "description": "The Epiphone Les Paul Standard offers the classic Les Paul design and tone at an affordable price. Features a mahogany body with maple top, ProBucker pickups, and Grover tuners.",
+      "category": "Guitar",
+      "brand": "Epiphone",
+      "image": "/images/Epiphone Les Paul Standard Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 15,
+      "name": "Squier Classic Vibe '50s Telecaster",
+      "price": 429.99,
+      "description": "The Squier Classic Vibe '50s Telecaster delivers authentic vintage Tele style and tone. Features a pine body, maple neck, and Fender-designed alnico single-coil pickups.",
+      "category": "Guitar",
+      "brand": "Squier",
+      "image": "/images/Squier Classic Vibe '50s Telecaster.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 16,
+      "name": "Yamaha APX600 Acoustic-Electric Guitar",
+      "price": 299.99,
+      "description": "The Yamaha APX600 is a thin-body acoustic-electric guitar designed for comfortable playability. Features a spruce top, die-cast tuners, and System 65A preamp with built-in tuner.",
+      "category": "Guitar",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha APX600 Acoustic-Electric Guitar.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 17,
+      "name": "Yamaha P-125 Digital Piano",
+      "price": 649.99,
+      "description": "The Yamaha P-125 is a compact digital piano with 88 weighted keys and authentic piano sound. Features Yamaha's Pure CF Sound Engine, built-in speakers, and various connectivity options.",
+      "category": "Keyboard",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha P-125 Digital Piano.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 18,
+      "name": "Casio Privia PX-S1000 Digital Piano",
+      "price": 549.99,
+      "description": "The Casio Privia PX-S1000 is the world's slimmest digital piano with 88 weighted keys. Features Smart Scaled Hammer Action Keyboard, 18 tones, and Bluetooth audio.",
+      "category": "Keyboard",
+      "brand": "Casio",
+      "image": "/images/Casio Privia PX-S1000 Digital Piano.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 19,
+      "name": "Nord Stage 3 88 Keyboard",
+      "price": 4499.99,
+      "description": "The Nord Stage 3 is a flagship keyboard workstation for professional musicians. Features 88 weighted hammer action keys, three sound engines, and extensive effects section.",
+      "category": "Keyboard",
+      "brand": "Nord",
+      "image": "/images/Nord Stage 3 88 Keyboard.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 20,
+      "name": "Korg Kronos 88 Keyboard Workstation",
+      "price": 3699.99,
+      "description": "The Korg Kronos is a professional keyboard workstation with nine sound engines. Features 88 weighted keys, color touchscreen, and extensive sequencing capabilities.",
+      "category": "Keyboard",
+      "brand": "Korg",
+      "image": "/images/Korg Kronos 88 Keyboard Workstation.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 21,
+      "name": "Roland JUNO-DS88 Synthesizer",
+      "price": 1199.99,
+      "description": "The Roland JUNO-DS88 is a versatile synthesizer with 88 weighted keys. Features over 1,000 sounds, pattern sequencer, and USB audio/MIDI interface.",
+      "category": "Keyboard",
+      "brand": "Roland",
+      "image": "/images/Roland JUNO-DS88 Synthesizer.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 22,
+      "name": "Yamaha MODX8 Synthesizer",
+      "price": 1899.99,
+      "description": "The Yamaha MODX8 is a powerful synthesizer with 88 weighted keys. Features AWM2 and FM-X sound engines, Super Knob control, and extensive connectivity options.",
+      "category": "Keyboard",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha MODX8 Synthesizer.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 23,
+      "name": "Akai MPK249 MIDI Controller",
+      "price": 399.99,
+      "description": "The Akai MPK249 is a 49-key MIDI controller with semi-weighted keys. Features 16 MPC pads, 8 assignable knobs, and extensive DAW integration.",
+      "category": "Keyboard",
+      "brand": "Akai",
+      "image": "/images/Akai MPK249 MIDI Controller.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 24,
+      "name": "Novation Launchkey 49 MK3 MIDI Controller",
+      "price": 219.99,
+      "description": "The Novation Launchkey 49 MK3 is a 49-key MIDI controller designed for Ableton Live. Features 16 velocity-sensitive pads, 8 knobs, and deep integration with DAWs.",
+      "category": "Keyboard",
+      "brand": "Novation",
+      "image": "/images/Novation Launchkey 49 MK3 MIDI Controller.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 25,
+      "name": "Arturia KeyLab 88 MK2 MIDI Controller",
+      "price": 999.99,
+      "description": "The Arturia KeyLab 88 MK2 is a premium 88-key MIDI controller with hammer-action keybed. Features 16 RGB pads, 9 faders, and extensive DAW integration.",
+      "category": "Keyboard",
+      "brand": "Arturia",
+      "image": "/images/Arturia KeyLab 88 MK2 MIDI Controller.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 26,
+      "name": "Native Instruments Komplete Kontrol S88 MK2",
+      "price": 1049.99,
+      "description": "The Native Instruments Komplete Kontrol S88 MK2 is a premium 88-key MIDI controller with Fatar keybed. Features dual color screens, light guide, and deep integration with NI software.",
+      "category": "Keyboard",
+      "brand": "Native Instruments",
+      "image": "/images/Native Instruments Komplete Kontrol S88 MK2.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 27,
+      "name": "Pearl Export EXX725S/C Drum Set",
+      "price": 749.99,
+      "description": "The Pearl Export EXX725S/C is a complete 5-piece drum set with hardware. Features poplar/Asian mahogany shells, 830 series hardware, and durable finish options.",
+      "category": "Drum",
+      "brand": "Pearl",
+      "image": "/images/Pearl Export EXX725S-C Drum Set.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 28,
+      "name": "Tama Imperialstar 5-Piece Drum Set",
+      "price": 699.99,
+      "description": "The Tama Imperialstar is a complete 5-piece drum set with hardware and cymbals. Features 100% poplar shells, Accu-Tune bass drum hoops, and precision bearing edges.",
+      "category": "Drum",
+      "brand": "Tama",
+      "image": "/images/Tama Imperialstar 5-Piece Drum Set.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 29,
+      "name": "DW Design Series 5-Piece Drum Set",
+      "price": 1299.99,
+      "description": "The DW Design Series is a professional 5-piece drum set. Features North American maple shells, True-Pitch tuning system, and STM mounting system.",
+      "category": "Drum",
+      "brand": "DW",
+      "image": "/images/DW Design Series 5-Piece Drum Set.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 30,
+      "name": "Gretsch Catalina Maple 7-Piece Drum Set",
+      "price": 1099.99,
+      "description": "The Gretsch Catalina Maple is a versatile 7-piece drum set. Features 7-ply maple shells, 30-degree bearing edges, and GTS mounting system.",
+      "category": "Drum",
+      "brand": "Gretsch",
+      "image": "/images/Gretsch Catalina Maple 7-Piece Drum Set.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 31,
+      "name": "Alesis Surge Mesh Electronic Drum Kit",
+      "price": 499.99,
+      "description": "The Alesis Surge Mesh is an electronic drum kit with mesh heads. Features 8-inch mesh snare, three 8-inch mesh toms, and Surge Drum Module with 385 sounds.",
+      "category": "Drum",
+      "brand": "Alesis",
+      "image": "/images/Alesis Surge Mesh Electronic Drum Kit.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 32,
+      "name": "Yamaha DTX6K-X Electronic Drum Kit",
+      "price": 1099.99,
+      "description": "The Yamaha DTX6K-X is a premium electronic drum kit. Features TCS pads, real hi-hat stand, and DTX-PRO module with 40 preset kits.",
+      "category": "Drum",
+      "brand": "Yamaha",
+      "image": "/images/Yamaha DTX6K-X Electronic Drum Kit.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 33,
+      "name": "Roland VAD306 V-Drums Acoustic Design Kit",
+      "price": 2999.99,
+      "description": "The Roland VAD306 combines the look and feel of acoustic drums with electronic versatility. Features full-size wood shells, digital snare/ride, and TD-27 sound module.",
+      "category": "Drum",
+      "brand": "Roland",
+      "image": "/images/Roland VAD306 V-Drums Acoustic Design Kit.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 34,
+      "name": "Zildjian A Custom Cymbal Pack",
+      "price": 899.99,
+      "description": "The Zildjian A Custom cymbal pack includes 14-inch hi-hats, 16-inch crash, 18-inch crash, and 20-inch ride. Features brilliant finish and bright, expressive sound.",
+      "category": "Drum",
+      "brand": "Zildjian",
+      "image": "/images/Zildjian A Custom Cymbal Pack.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 35,
+      "name": "Sabian AAX Cymbal Pack",
+      "price": 849.99,
+      "description": "The Sabian AAX cymbal pack includes 14-inch hi-hats, 16-inch crash, 18-inch crash, and 21-inch ride. Features modern, bright sound with quick response.",
+      "category": "Drum",
+      "brand": "Sabian",
+      "image": "/images/Sabian AAX Cymbal Pack.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 36,
+      "name": "Meinl HCS Cymbal Pack",
+      "price": 199.99,
+      "description": "The Meinl HCS cymbal pack includes 14-inch hi-hats, 16-inch crash, and 20-inch ride. Features brass alloy construction and is ideal for beginners.",
+      "category": "Drum",
+      "brand": "Meinl",
+      "image": "/images/Meinl HCS Cymbal Pack.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 37,
+      "name": "Shure SM57 Instrument Microphone",
+      "price": 99.99,
+      "description": "The Shure SM57 is a legendary dynamic microphone for instrument recording and sound reinforcement. Features cardioid pickup pattern and rugged construction.",
+      "category": "Accessories",
+      "brand": "Shure",
+      "image": "/images/Shure SM57 Instrument Microphone.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 38,
+      "name": "Focusrite Scarlett 2i2 Audio Interface",
+      "price": 169.99,
+      "description": "The Focusrite Scarlett 2i2 is a popular 2-in/2-out USB audio interface. Features two mic/line/instrument inputs with Scarlett preamps and 24-bit/192kHz conversion.",
+      "category": "Accessories",
+      "brand": "Focusrite",
+      "image": "/images/Focusrite Scarlett 2i2 Audio Interface.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 39,
+      "name": "Boss Katana-50 MkII Guitar Amplifier",
+      "price": 249.99,
+      "description": "The Boss Katana-50 MkII is a versatile 50-watt guitar amplifier. Features five amp characters, over 60 effects, and USB connectivity for recording.",
+      "category": "Accessories",
+      "brand": "Boss",
+      "image": "/images/Boss Katana-50 MkII Guitar Amplifier.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 40,
+      "name": "Fender Deluxe Molded Guitar Case",
+      "price": 149.99,
+      "description": "The Fender Deluxe Molded Case provides superior protection for your guitar. Features molded ABS exterior, plush interior, and TSA-approved latches.",
+      "category": "Accessories",
+      "brand": "Fender",
+      "image": "/images/Fender Deluxe Molded Guitar Case.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 41,
+      "name": "D'Addario EXL110 Electric Guitar Strings",
+      "price": 12.99,
+      "description": "D'Addario EXL110 Nickel Wound Regular Light gauge strings (10-46) are D'Addario's most popular electric guitar string set. Features round wound with nickel-plated steel.",
+      "category": "Accessories",
+      "brand": "D'Addario",
+      "image": "/images/D'Addario EXL110 Electric Guitar Strings.jpg",
+      "isBestSeller": true,
+      "inStock": true
+    },
+    {
+      "id": 42,
+      "name": "Ernie Ball Regular Slinky Guitar Strings",
+      "price": 6.99,
+      "description": "Ernie Ball Regular Slinky strings (10-46) are made from nickel-plated steel wire wrapped around a hex-shaped steel core wire. The most popular Slinky gauge.",
+      "category": "Accessories",
+      "brand": "Ernie Ball",
+      "image": "/images/Ernie Ball Regular Slinky Guitar Strings.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 43,
+      "name": "Dunlop Tortex Standard Guitar Picks",
+      "price": 4.99,
+      "description": "Dunlop Tortex Standard picks offer the perfect combination of flexibility and control. Pack includes 12 picks in your choice of gauge.",
+      "category": "Accessories",
+      "brand": "Dunlop",
+      "image": "/images/Dunlop Tortex Standard Guitar Picks.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 44,
+      "name": "Hercules GS414B Guitar Stand",
+      "price": 39.99,
+      "description": "The Hercules GS414B is a single guitar stand with auto grip system. Features foldable design, neck cradle with specially formulated foam, and stable tripod base.",
+      "category": "Accessories",
+      "brand": "Hercules",
+      "image": "/images/Hercules GS414B Guitar Stand.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 45,
+      "name": "Korg TM-60 Tuner Metronome",
+      "price": 29.99,
+      "description": "The Korg TM-60 combines a tuner and metronome in one compact device. Features wide detection range, 15 rhythm variations, and up to 120 hours of battery life.",
+      "category": "Accessories",
+      "brand": "Korg",
+      "image": "/images/Korg TM-60 Tuner Metronome.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    },
+    {
+      "id": 46,
+      "name": "Vic Firth 5A Drumsticks",
+      "price": 10.99,
+      "description": "Vic Firth 5A drumsticks are the world's most popular stick model. Features tear-drop tip, medium taper, and versatile design for various playing styles.",
+      "category": "Accessories",
+      "brand": "Vic Firth",
+      "image": "/images/Vic Firth 5A Drumsticks.jpg",
+      "isBestSeller": false,
+      "inStock": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "guitar",
+      "name": "Guitars",
+      "image": "/images/guitar-category.jpg"
+    },
+    {
+      "id": "keyboard",
+      "name": "Keyboards",
+      "image": "/images/keyboard-category.jpg"
+    },
+    {
+      "id": "drum",
+      "name": "Drums",
+      "image": "/images/drums-category.jpg"
+    },
+    {
+      "id": "accessories",
+      "name": "Accessories",
+      "image": "/images/accessories-category.jpg"
+    }
+  ],
+  "brands": [
+    {
+      "id": "yamaha",
+      "name": "Yamaha",
+      "image": "/images/yamaha.jpg"
+    },
+    {
+      "id": "fender",
+      "name": "Fender",
+      "image": "/images/fender.jpg"
+    },
+    {
+      "id": "fernandes",
+      "name": "Fernandes",
+      "image": "/images/fernandes.jpg"
+    },
+    {
+      "id": "roland",
+      "name": "Roland",
+      "image": "/images/roland.jpg"
+    },
+    {
+      "id": "gibson",
+      "name": "Gibson",
+      "image": "/images/gibson.jpg"
+    },
+    {
+      "id": "ibanez",
+      "name": "Ibanez",
+      "image": "/images/ibanez.jpg"
+    },
+    {
+      "id": "martin",
+      "name": "Martin",
+      "image": "/images/martin.jpg"
+    },
+    {
+      "id": "taylor",
+      "name": "Taylor",
+      "image": "/images/taylor.jpg"
+    }
+  ],
+  "cart": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "123",
+      "email": "nguyennv2107@gmail.com",
+      "avatar": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "123",
+      "email": "nguyennv2107@gmail.com",
+      "avatar": "https://dongvat.edu.vn/upload/2025/01/meo-cute-meme-50.webp"
+    },
+    {
+      "username": "user3",
+      "password": "123",
+      "email": "nguyenkuhaku@gmail.com",
+      "id": 3
+    }
+  ]
+}

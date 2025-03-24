@@ -1,0 +1,80 @@
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #ff006e;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--light-color);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.stock-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.in-stock {
+  color: green;
+}
+
+.out-of-stock {
+  color: red;
+}
+
+.category-card,
+.brand-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.category-card:hover,
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
